@@ -1,0 +1,40 @@
+{
+    "login": "/auth/login",
+    "signup": "/auth/signup",
+    "dashboard": {
+        "linkText": "Dashboard",
+        "linkHref": "/dashboard"
+    },
+    "profile": {
+        "linkText": "Profile",
+        "linkHref": "/profile"
+    },
+    "settings": {
+        "linkText": "Account",
+        "linkHref": "/settings"
+    },
+    "organisation": {
+        "linkText": "Our Organisation",
+        "linkHref": "/organisation"
+    },
+    "report_settings": {
+        "linkText": "Report Settings",
+        "linkHref": "/report-settings"
+    },
+    "add_data": {
+        "linkText": "Add Data",
+        "linkHref": "/add-data"
+    },
+    "reports": {
+        "linkText": "Reports",
+        "linkHref": "/reports"
+    },
+    "reduction_plans": {
+        "linkText": "Reduction Plans",
+        "linkHref": "/reduction-plan"
+    },
+    "get_support": {
+        "linkText": "Get Support",
+        "linkHref": "/get-support"
+    }
+}
