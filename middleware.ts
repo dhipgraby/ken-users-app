@@ -12,7 +12,7 @@ const { auth } = NextAuth(authConfig);
 
 export default auth(async (req): Promise<any | null> => {
   const { nextUrl } = req;
-  const isLoggedIn = !!req.auth;
+  const isLoggedIn = !!req.auth?.user;
 
   // Normalize path to avoid trailing-slash mismatches (e.g. "/auth/login/" vs "/auth/login")
   const pathname = nextUrl.pathname.endsWith("/") && nextUrl.pathname !== "/"

@@ -33,6 +33,17 @@ const UploadFormField = ({
   ) => {
     const _file = event.target?.files?.[0];
     if (!_file) return;
+    if (!ACCEPTED_FILE_TYPES.includes(_file.type)) {
+      event.target.value = "";
+      form.setError(fieldName, {
+        type: "fileType",
+        message: "Please select a JPEG, PNG, or WebP image."
+      });
+      return;
+    }
+    if (form.getFieldState(fieldName).error?.type === "fileType") {
+      form.clearErrors(fieldName);
+    }
     const newFile = { file: _file, name: _file.name, url: URL.createObjectURL(_file), type: _file.type, size: _file.size };
     field.onChange(newFile ?? undefined);
   };
@@ -75,7 +86,7 @@ const UploadFormField = ({
                       className="cursor-pointer flex px-2"
                     >
                       <FileUp width={16} className="mr-2" />
-                      {field.value ? "Change document" : "Upload document"}
+                      {field.value ? "Change image" : "Upload image"}
                     </label>
                     <Input
                       id={fieldName}

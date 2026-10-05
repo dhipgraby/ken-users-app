@@ -45,7 +45,7 @@ export function fmt(value: number | string | undefined, fallback = "—"): strin
       // Parse YYYY-MM-DD directly to avoid timezone issues
       const [year, month, day] = value.split("T")[0].split("-");
       return `${day}/${month}/${year}`;
-    } catch (e) {
+    } catch {
       // If parsing fails, return the original value
       return value;
     }

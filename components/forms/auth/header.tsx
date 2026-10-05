@@ -21,7 +21,7 @@ export const Header = ({
       <FrameworkLogo variant="light" size={60} withShadow={true} />
       <h1 className={cn(
         "text-xl font-bold tracking-tight text-gray-900",
-        font.className,
+        font.className
       )}>
         {title || "Auth"}
       </h1>

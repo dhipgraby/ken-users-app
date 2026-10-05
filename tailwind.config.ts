@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 // const defaultTheme = require("tailwindcss/defaultTheme");
 // const colors = require("tailwindcss/colors");
 // const {
@@ -142,7 +143,7 @@ const config = {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")]
+  plugins: [animate]
 } satisfies Config;
 
 export default config;

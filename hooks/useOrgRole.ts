@@ -25,8 +25,7 @@ export const useOrgRole = () => {
         if (!mounted) return;
         setCanOnlyView(true);
       } finally {
-        if (!mounted) return;
-        setIsLoading(false);
+        if (mounted) setIsLoading(false);
       }
     })();
 

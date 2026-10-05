@@ -34,8 +34,8 @@ export default {
             accessToken: token,
             isOAuth: false
           } as any;
-        } catch (error) {
-          console.error("Signing server error", error);
+        } catch {
+          console.error("Signing server error");
           // Fail the credentials flow
           return null;
         }

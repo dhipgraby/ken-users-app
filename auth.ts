@@ -28,7 +28,6 @@ export const {
           );
 
           const data = response.data;
-          console.log("DEBUG: Backend Verification Success", data);
 
           // Allow admin users - they can access all organizations
           Object.assign(user, {
@@ -42,8 +41,8 @@ export const {
           });
 
           return true;
-        } catch (error) {
-          console.error("DEBUG: Signing server error", error);
+        } catch {
+          console.error("Signing server error");
           return false;
         }
       }

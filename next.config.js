@@ -26,18 +26,13 @@ const nextConfig = {
   webpack(config) {
     config.externals = config.externals || [];
     config.externals.push(({ request }, callback) => {
-      if (request?.endsWith(".node")) {
+      // React's server.node is a JavaScript entry resolved by Next, not a native addon.
+      if (request?.endsWith(".node") && request !== "react-server-dom-webpack/server.node") {
         return callback(null, "commonjs " + request);
       }
       callback();
     });
 
-    // Prevent bundling optional 'canvas' dependency used by pdfjs/react-pdf in browser builds
-    config.resolve = config.resolve || {};
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      canvas: false
-    };
     return config;
   }
 };
